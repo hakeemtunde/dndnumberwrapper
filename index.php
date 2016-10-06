@@ -1,13 +1,4 @@
 <?php
-
-/**
- * 6 Oct, 2016
- * @author     AbdulHakeem A <hakeemtunde@hotmail.com>
- * @copyright  KorBytes
- * @version    CVS: 1.0
- * @link       http://4sightweb.com
- */
-
 /*
  * sample demostration on how to use the wrapper class
  */

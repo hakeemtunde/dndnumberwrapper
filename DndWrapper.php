@@ -13,8 +13,6 @@
  * This a util class for dnd sms verification
  */
 
-//require_once 'unirest-php/src/Unirest.php';
-
 class DndWrapper
 {
   const REG_STATUS_STR = "Never Registered";
