@@ -15,7 +15,7 @@
 require_once 'unirest-php/src/Unirest.php';
 require_once 'DndWrapper.php';
 
-$headers = array('X-Mashape-Key'=>'y0InagbMx9msh8KTnNhPxKrQheN2p19ioPgjsnhBtbGmPo5dEA',
+$headers = array('X-Mashape-Key'=>'$key',
                   'Accept' => 'application/json');
 
 $query = array('mobilenos' => '8162469186,8022712307');
