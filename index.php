@@ -4,14 +4,11 @@
  */
 
 require_once 'unirest-php/src/Unirest.php';
-require_once 'DndWrapper.php';
+require_once 'UniRestDnd.php';
 
-$headers = array('X-Mashape-Key'=>'$key',
-                  'Accept' => 'application/json');
+$query = array('mobilenos' => '8022712307');
 
-$query = array('mobilenos' => '8162469186,8022712307');
-
-$dndwrapper = new DndWrapper($headers, $query);
+$dndwrapper = new UniRestDnd($query);
 
 $dndwrapper->sendRequest();
 

@@ -1,5 +1,7 @@
 <?php
 
+require_once 'SendRequestInterface.php';
+
 /**
  * Wrapper class for unirest-php
  * 6 Oct, 2016
@@ -13,13 +15,14 @@
  * This a util class for dnd sms verification
  */
 
-class DndWrapper
+class UniRestDnd implements SendRequestInterface
 {
   const REG_STATUS_STR = "Never Registered";
 
   private $query = "";
 
-  private $headers;
+  private $headers = array('X-Mashape-Key'=>'sh8KTnNhPxKrQheN2p19ioPgjsn',
+    		'Accept' => 'application/json');
 
   private $responseStatus = 0;
 
@@ -29,11 +32,11 @@ class DndWrapper
 
   private $unRegisteredNumbers = [];
 
-  public function __construct($headerinfos = [], $query = [])
+  public function __construct($query = [])
   {
-    $this->headers = $headerinfos;
 
     $this->query = $query;
+    
   }
 
   public function sendRequest($link ='https://dndcheck.p.mashape.com/index.php')
@@ -52,6 +55,7 @@ class DndWrapper
 
   private function sortNumbers()
   {
+  	
       foreach($this->response->body as $numberdetail) {
 
         if ($numberdetail->DND_status == self::REG_STATUS_STR) {
